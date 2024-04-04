@@ -25,3 +25,42 @@ export const searchRecipes = async (searchTerm: string, page: number) => {
     console.log(error);
   }
 };
+
+//creating recipe summary endpoint
+export const getRecipeSummary = async (recipeId: string) => {
+  if (!apiKey) {
+    throw new Error("API Key not found");
+  }
+
+  const url = new URL(`https://api.spoonacular.com/recipes/${recipeId}/summary`);
+
+  const params = {
+    apiKey: apiKey
+  }
+
+  url.search = new URLSearchParams(params).toString();
+
+  const response = await fetch(url);
+  const json = await response.json();
+
+  return json;
+}
+
+//create fav recipes endpoint
+export const getFavoriteRecipesByIDs = async (ids: string[]) => {
+  if (!apiKey) {
+    throw new Error("API Key not found");
+  }
+
+  const url = new URL("https://api.spoonacular.com/recipes/informationBulk");
+  const params = {
+    apiKey: apiKey,
+    ids: ids.join(","),
+  };
+  url.search = new URLSearchParams(params).toString();
+
+  const searchResponse = await fetch(url);
+  const json = await searchResponse.json();
+
+  return { results: json };
+};
