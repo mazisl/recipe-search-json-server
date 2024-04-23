@@ -4,11 +4,18 @@ import type { Recipe } from "../types";
 interface RecipeCardProps {
   recipe: Recipe;
   cardClickHandler: () => void;
-  onFavBtnClick: (recipe: Recipe) => void;
-  isFavorite: boolean
+  handleHeartClick: (recipe: Recipe, isFavorite: boolean) => void;
 }
 
-const RecipeCard = ({recipe, cardClickHandler, onFavBtnClick, isFavorite}: RecipeCardProps) => {
+const RecipeCard = ({recipe, cardClickHandler, handleHeartClick}: RecipeCardProps) => {
+
+  const onEmptyHeartClick = (recipe: Recipe) => {
+    handleHeartClick(recipe, true)
+  }
+
+  const onHeartClick = (recipe: Recipe) => {
+    handleHeartClick(recipe, false);
+  }
 
   return (
     <div className="recipe-card" onClick={cardClickHandler}>
@@ -16,9 +23,8 @@ const RecipeCard = ({recipe, cardClickHandler, onFavBtnClick, isFavorite}: Recip
       <div className="recipe-card-title">
         <span onClick={(e) => {
           e.stopPropagation();
-          onFavBtnClick(recipe);
         }}>
-          {isFavorite ? <AiFillHeart size={25} color="red"/> : <AiOutlineHeart size={25}/> }
+          {recipe.isFavorite ? <AiFillHeart size={25} color="red" onClick={() => onHeartClick(recipe)}/> : <AiOutlineHeart size={25} onClick={() => onEmptyHeartClick(recipe)}/> }
           {/* <AiOutlineHeart /> */}
         </span>
         <h3>{recipe.title}</h3>
