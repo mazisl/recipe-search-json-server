@@ -1,20 +1,20 @@
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import type { Recipe } from "../types";
+import type { Recipe, User, Favorite } from "../types";
+import toast from "react-hot-toast";
 
 interface RecipeCardProps {
   recipe: Recipe;
   cardClickHandler: () => void;
-  handleHeartClick: (recipe: Recipe, isFavorite: boolean) => void;
+  isFavorite: boolean;
+  currentUser: User | null;
+  toggleFavRecipe: (favRecipe: Favorite) => Promise<string | void>
 }
 
-const RecipeCard = ({recipe, cardClickHandler, handleHeartClick}: RecipeCardProps) => {
+const RecipeCard = ({recipe, cardClickHandler, isFavorite, currentUser, toggleFavRecipe}: RecipeCardProps) => {
 
-  const onEmptyHeartClick = (recipe: Recipe) => {
-    handleHeartClick(recipe, true)
-  }
-
-  const onHeartClick = (recipe: Recipe) => {
-    handleHeartClick(recipe, false);
+  const favRecipe: Omit<Favorite, 'id'> = {
+    userId: currentUser?.id,
+    recipeId: recipe.id
   }
 
   return (
@@ -23,9 +23,13 @@ const RecipeCard = ({recipe, cardClickHandler, handleHeartClick}: RecipeCardProp
       <div className="recipe-card-title">
         <span onClick={(e) => {
           e.stopPropagation();
+          if (!currentUser) {
+            toast.error('Login to create favorites!');
+            return;              
+          }
+          toggleFavRecipe(favRecipe)
         }}>
-          {recipe.isFavorite ? <AiFillHeart size={25} color="red" onClick={() => onHeartClick(recipe)}/> : <AiOutlineHeart size={25} onClick={() => onEmptyHeartClick(recipe)}/> }
-          {/* <AiOutlineHeart /> */}
+          {isFavorite ? <AiFillHeart size={25} color="red" /> : <AiOutlineHeart size={25} /> }
         </span>
         <h3>{recipe.title}</h3>
       </div>

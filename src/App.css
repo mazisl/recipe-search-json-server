@@ -3,7 +3,7 @@
 }
 
 body {
-  padding-top: 5em;
+  padding-top: 2em;
   padding-bottom: 5em;
   background-color: rgb(237, 250, 250);
 }
@@ -15,21 +15,15 @@ body {
   }
 }
 
-.tab-active {
-  border-bottom: 4px rgb(202, 129, 2) solid;
-  padding-bottom: 0.5em;
-}
-
-form {
+/*form {
   display: flex;
   background-color: white;
   align-items: center;
-}
+}*/
 
 input {
   padding: 0.5em;
   font-size: 2em;
-  flex: 1;
   border: none;
 }
 
@@ -41,6 +35,126 @@ button {
   background-color: white;
   border: none;
   cursor: pointer;
+}
+
+.logout-btn-div {
+  text-align: right;
+}
+
+.register-and-login-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.register-btn {
+  margin-right: 15px;
+}
+
+.register-btn,
+.login-btn,
+.logout-btn {
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.register-btn:hover,
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: black;
+  color: azure;
+}
+
+/*register form start*/
+#login-form,
+#register-form {
+  /*position: relative;*/
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+#login-form .close-btn,
+#register-form .close-btn {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+#login-form h2,
+#register-form h2 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+#login-form .form-group,
+#register-form .form-group {
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+#login-form label,
+#register-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"],
+#register-form input[type="text"],
+#register-form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#login-form button,
+#register-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-form button:hover,
+#register-form button:hover {
+  background-color: #0056b3;
+}
+/*register form end*/
+
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs .left {
+  display: flex;
+  gap: 2em;
+  cursor: pointer;
+}
+
+.tab-active {
+  border-bottom: 4px rgb(202, 129, 2) solid;
+  padding-bottom: 0.5em;
+}
+
+.create-recipe-btn {
+  background-color: rgb(154, 153, 153);
+  color: black;
+  font-size: 1.5em;
+  padding: 0.6em;
+  margin: auto;
 }
 
 .recipe-grid {
@@ -84,14 +198,6 @@ button {
   gap: 0.5em;
 }
 
-.create-recipe-btn {
-  background-color: rgb(154, 153, 153);
-  color: black;
-  font-size: 1.5em;
-  padding: 0.6em;
-  margin: auto;
-}
-
 .view-more-btn {
   font-size: 1.5em;
   padding: 1em;
@@ -131,7 +237,7 @@ button {
   padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
-//modal overlay style
+/*modal styles*/
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -168,17 +274,6 @@ button {
 .modal-header .close-btn {
   cursor: pointer;
   font-size: 25px;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-between;
-}
-
-.tabs .left {
-  display: flex;
-  gap: 2em;
-  cursor: pointer;
 }
 
 #create-recipe-form {

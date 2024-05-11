@@ -2,376 +2,705 @@
   "recipes": [
     {
       "id": "1",
-      "title": "Pasta Carbonara",
-      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg",
-      "ingredients": [
-        "spaghetti",
-        "eggs",
-        "bacon",
-        "cheese"
-      ],
-      "instructions": "Cook spaghetti; fry bacon; mix with eggs and cheese.",
-      "cuisine": "Italian",
-      "isFavorite": true
+      "title": "Chicken Stir-Fry",
+      "image": "https://www.kitchensanctuary.com/wp-content/uploads/2016/03/Quick-Chicken-Stir-Fry-wide-FS-60.jpg",
+      "ingredients": "chicken breast, bell peppers, soy sauce, rice"
+      ,
+      "instructions": "Stir-fry chicken and vegetables; add soy sauce; serve with rice.",
+      "cuisine": "Asian",
+      "isFavorite": "false"
     },
     {
       "id": "2",
-      "title": "Chicken Stir-Fry",
-      "image": "https://img.bestrecipes.com.au/CdJuRlxF/br/2020/07/chicken-stir-fry-959368-1.jpg",
-      "ingredients": [
-        "chicken breast",
-        "bell peppers",
-        "soy sauce",
-        "rice"
-      ],
-      "instructions": "Stir-fry chicken and vegetables; add soy sauce; serve with rice.",
-      "cuisine": "Asian",
-      "isFavorite": false
-    },
-    {
-      "id": "4",
       "title": "Classic Margherita Pizza",
-      "ingredients": [
-        "pizza dough",
-        "tomato sauce",
-        "fresh mozzarella",
-        "fresh basil",
-        "olive oil"
-      ],
+      "ingredients": "pizza dough, tomato sauce, fresh mozzarella, fresh basil, olive oil"
+      ,
       "instructions": "Roll out pizza dough; spread tomato sauce; top with sliced mozzarella and basil; bake until crust is golden.",
       "image": "https://imagevars.gulfnews.com/2023/09/04/Magherita-pizza-_18a6007a47a_medium.jpg",
       "cuisine": "Italian",
-      "isFavorite": true
+      "isFavorite": "false"
     },
     {
-      "id": "6",
-      "title": "Vegetarian Stir-Fry",
-      "ingredients": [
-        "tofu",
-        "broccoli",
-        "bell peppers",
-        "carrots",
-        "soy sauce",
-        "sesame oil"
-      ],
-      "instructions": "Sauté tofu and vegetables in sesame oil; add soy sauce; serve over rice.",
-      "image": "https://food-images.files.bbci.co.uk/food/recipes/sachas_stir-fry_17077_16x9.jpg",
-      "cuisine": "Asian",
-      "isFavorite": false
-    },
-    {
-      "id": "7",
+      "id": "3",
       "title": "Beef Tacos",
-      "ingredients": [
-        "ground beef",
-        "taco seasoning",
-        "tortillas",
-        "lettuce",
-        "tomato",
-        "cheese",
-        "sour cream"
-      ],
+      "ingredients": "ground beef, taco seasoning, tortillas, lettuce, tomato, cheese, sour cream"
+      ,
       "instructions": "Brown ground beef with taco seasoning; assemble tacos with desired toppings.",
       "image": "https://img.taste.com.au/Z2m_6zIt/taste/2016/11/beef-tacos-98153-1.jpeg",
       "cuisine": "Mexican",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "8",
+      "id": "4",
       "title": "Chicken Alfredo Pasta",
-      "ingredients": [
-        "chicken breast",
-        "fettuccine pasta",
-        "heavy cream",
-        "parmesan cheese",
-        "butter",
-        "garlic"
-      ],
+      "ingredients": "chicken breast, fettuccine pasta, heavy cream, parmesan cheese, butter, garlic"
+      ,
       "instructions": "Cook pasta; sauté chicken and garlic; add cream and parmesan; toss with cooked pasta.",
       "image": "https://dinnerthendessert.com/wp-content/uploads/2021/05/Chicken-Alfredo-Pasta-1x1-1.jpg",
       "cuisine": "Italian",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "9",
-      "title": "Mushroom Risotto",
-      "ingredients": [
-        "arborio rice",
-        "mushrooms",
-        "onion",
-        "vegetable broth",
-        "white wine",
-        "butter",
-        "parmesan cheese"
-      ],
-      "instructions": "Sauté mushrooms and onions; add rice and wine; gradually add broth; stir in butter and parmesan.",
-      "image": "https://www.afamilyfeast.com/wp-content/uploads/2012/11/Mushroom-Risotto-3.jpg",
-      "cuisine": "Italian",
-      "isFavorite": false
-    },
-    {
-      "id": "10",
+      "id": "5",
       "title": "BBQ Pulled Beef Sandwich",
-      "ingredients": [
-        "beef shoulder",
-        "BBQ sauce",
-        "hamburger buns",
-        "coleslaw"
-      ],
+      "ingredients": "beef shoulder, BBQ sauce, hamburger buns, coleslaw"
+      ,
       "instructions": "Slow-cook beef with BBQ sauce until tender; shred and serve on buns with coleslaw.",
       "image": "https://www.tasteguru.com/wp-content/uploads/Slow-Cooker-Pulled-BBQ-Beef-Sandwiches-3.jpg",
       "cuisine": "American",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "12",
+      "id": "6",
       "title": "Beef Burger",
-      "ingredients": [
-        "ground beef",
-        "hamburger buns",
-        "lettuce",
-        "tomato",
-        "onion",
-        "cheese",
-        "ketchup",
-        "mustard"
-      ],
+      "ingredients": "ground beef, hamburger buns, lettuce, tomato, onion, cheese, ketchup, mustard"
+      ,
       "instructions": "Form beef into patties; grill to desired doneness; assemble burgers with toppings and condiments.",
       "image": "https://food-images.files.bbci.co.uk/food/recipes/spicybeefburger_71357_16x9.jpg",
       "cuisine": "American",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "13",
-      "title": "Thai Green Curry",
-      "ingredients": [
-        "chicken thighs",
-        "green curry paste",
-        "coconut milk",
-        "bell peppers",
-        "bamboo shoots",
-        "basil leaves"
-      ],
-      "instructions": "Simmer chicken and vegetables in coconut milk and curry paste; garnish with basil leaves.",
-      "image": "https://heatherchristo.com/wp-content/uploads/2020/01/49336424473_259a36e340_o.jpg",
-      "cuisine": "Thai",
-      "isFavorite": false
-    },
-    {
-      "id": "14",
+      "id": "7",
       "title": "Lemon Garlic Shrimp Scampi",
-      "ingredients": [
-        "shrimp",
-        "linguine pasta",
-        "garlic",
-        "lemon",
-        "butter",
-        "white wine",
-        "parsley"
-      ],
+      "ingredients": "shrimp, linguine pasta, garlic, lemon, butter, white wine, parsley"
+      ,
       "instructions": "Sauté shrimp and garlic in butter; add lemon juice and wine; toss with cooked pasta and parsley.",
       "image": "https://www.daringgourmet.com/wp-content/uploads/2014/09/Campbells-Scampi-4-edited.jpg",
       "cuisine": "Italian",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "15",
-      "title": "Butternut Squash Soup",
-      "ingredients": [
-        "butternut squash",
-        "onion",
-        "garlic",
-        "vegetable broth",
-        "coconut milk",
-        "curry powder"
-      ],
-      "instructions": "Roast squash, onion, and garlic; blend with broth, coconut milk, and spices; simmer until heated through.",
-      "image": "https://www.wholesomeyum.com/wp-content/uploads/2018/09/wholesomeyum-Roasted-Butternut-Squash-Soup-Instant-Pot-4.jpg",
-      "cuisine": "American",
-      "isFavorite": false
-    },
-    {
-      "id": "16",
-      "title": "Lentil Curry",
-      "ingredients": [
-        "lentils",
-        "onion",
-        "garlic",
-        "ginger",
-        "tomatoes",
-        "coconut milk",
-        "curry powder"
-      ],
-      "instructions": "Sauté onions, garlic, and ginger; add lentils, tomatoes, and spices; simmer in coconut milk.",
-      "image": "https://saltedmint.com/wp-content/uploads/2024/01/red-lentil-curry-dhal-6.jpg",
-      "cuisine": "Indian",
-      "isFavorite": false
-    },
-    {
-      "id": "17",
-      "title": "Homemade Sushi Rolls",
-      "ingredients": [
-        "sushi rice",
-        "nori sheets",
-        "raw fish (e.g., salmon, tuna)",
-        "cucumber",
-        "avocado",
-        "soy sauce",
-        "wasabi"
-      ],
-      "instructions": "Prepare sushi rice; assemble rolls with fish, vegetables, and nori; slice and serve with soy sauce and wasabi.",
-      "image": "https://www.brandnewvegan.com/wp-content/uploads/2015/09/Homemade-Vegan-Sushi-2.jpg",
-      "cuisine": "Japanese",
-      "isFavorite": false
-    },
-    {
-      "id": "18",
-      "title": "Caesar Salad",
-      "ingredients": [
-        "romaine lettuce",
-        "croutons",
-        "parmesan cheese",
-        "Caesar dressing",
-        "lemon",
-        "olive oil",
-        "anchovies"
-      ],
-      "instructions": "Toss lettuce with croutons, cheese, and dressing; garnish with lemon wedges and anchovies.",
-      "image": "https://www.onceuponachef.com/images/2010/08/Homemade-Caesar-Salad-Dressing.jpg",
-      "cuisine": "Italian",
-      "isFavorite": false
-    },
-    {
-      "id": "19",
-      "title": "Beef Stroganoff",
-      "ingredients": [
-        "beef sirloin",
-        "onion",
-        "mushrooms",
-        "sour cream",
-        "beef broth",
-        "egg noodles"
-      ],
-      "instructions": "Sauté beef, onions, and mushrooms; stir in sour cream and broth; serve over cooked noodles.",
-      "image": "https://supermancooks.com/wp-content/uploads/2023/03/beef-stroganoff-featured.jpg",
-      "cuisine": "Russian",
-      "isFavorite": false
-    },
-    {
-      "id": "20",
-      "title": "Vegetable Paella",
-      "ingredients": [
-        "rice",
-        "bell peppers",
-        "tomatoes",
-        "onion",
-        "green beans",
-        "artichoke hearts",
-        "saffron"
-      ],
-      "instructions": "Sauté vegetables; add rice and broth; simmer until rice is cooked; garnish with lemon wedges.",
-      "image": "https://www.feastingathome.com/wp-content/uploads/2021/02/vegetable-paella-recipe-3.jpg",
-      "cuisine": "Spanish",
-      "isFavorite": false
-    },
-    {
-      "id": "21",
+      "id": "8",
       "title": "Chicken Tikka Masala",
-      "ingredients": [
-        "chicken thighs",
-        "yogurt",
-        "tomato sauce",
-        "onion",
-        "garlic",
-        "ginger",
-        "garam masala"
-      ],
+      "ingredients": "chicken thighs, yogurt, tomato sauce, onion, garlic, ginger, garam masala"
+      ,
       "instructions": "Marinate chicken in yogurt and spices; grill or sauté; simmer in tomato sauce with onions and spices.",
       "image": "https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2023/09/Air_Fryer_Chicken_Tikka_Masala-500x500.jpg",
       "cuisine": "Indian",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "22",
-      "title": "Eggplant Parmesan",
-      "ingredients": [
-        "eggplant",
-        "breadcrumbs",
-        "egg",
-        "marinara sauce",
-        "mozzarella cheese",
-        "parmesan cheese"
-      ],
-      "instructions": "Slice and bread eggplant; fry until golden; layer with marinara sauce and cheese; bake until bubbly.",
-      "image": "https://www.honeywhatscooking.com/wp-content/uploads/2020/11/Baked-Eggplant-Parmesan30.jpg",
-      "cuisine": "Italian",
-      "isFavorite": false
-    },
-    {
-      "id": "23",
+      "id": "9",
       "title": "Shish Taouk (Lebanese Chicken Kebabs)",
-      "ingredients": [
-        "boneless chicken breast",
-        "garlic cloves",
-        "lemon juice",
-        "plain yogurt",
-        "olive oil",
-        "paprika",
-        "cumin",
-        "turmeric",
-        "cayenne pepper",
-        "salt",
-        "black pepper",
-        "red onion (for skewers)",
-        "bell peppers (optional, for skewers)"
-      ],
+      "ingredients": "chicken breast, garlic cloves, lemon juice, plain yogurt, olive oil, paprika, cumin, turmeric, cayenne pepper, salt,    black pepper, red onion (for skewers), bell peppers",
       "instructions": "1. Cut chicken breast into bite-sized cubes.\n2. In a bowl, mix minced garlic, lemon juice, yogurt, olive oil, paprika, cumin, turmeric, cayenne pepper, salt, and black pepper to make the marinade.\n3. Add chicken cubes to the marinade and coat evenly. Cover and refrigerate for at least 2 hours (preferably overnight) to marinate.\n4. Preheat grill to medium-high heat.\n5. Thread marinated chicken cubes onto skewers, alternating with pieces of red onion and bell peppers if desired.\n6. Grill kebabs for about 10-12 minutes, turning occasionally, until chicken is cooked through and slightly charred.\n7. Serve hot with rice or pita bread and a side of garlic sauce or tahini sauce.",
       "image": "https://tastegreatfoodie.com/wp-content/uploads/2022/09/Shish-Tawook-Recipe-e1662340981256.jpeg",
       "cuisine": "Lebanese",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "24",
+      "id": "10",
       "title": "Pad Thai",
-      "ingredients": [
-        "rice noodles",
-        "shrimp",
-        "tofu",
-        "bean sprouts",
-        "green onions",
-        "peanuts",
-        "tamarind sauce"
-      ],
+      "ingredients": "rice noodles, shrimp, tofu, bean sprouts, green onions, peanuts, tamarind sauce",
       "instructions": "Soak noodles; stir-fry shrimp, tofu, and vegetables; toss with noodles, sauce, and peanuts.",
       "image": "https://www.chilipeppermadness.com/wp-content/uploads/2022/03/Pad-Thai-SQ.jpg",
       "cuisine": "Thai",
-      "isFavorite": false
+      "isFavorite": "false"
     },
     {
-      "id": "25",
-      "title": "Grilled Salmon",
-      "ingredients": [
-        "salmon fillet",
-        "lemon",
-        "garlic",
-        "olive oil",
-        "dill",
-        "salt",
-        "pepper"
-      ],
-      "instructions": "Marinate salmon in olive oil, garlic, and herbs; grill until cooked through; serve with lemon wedges.",
-      "image": "https://thekitchengirl.com/wp-content/uploads/Grilled-Salmon-a_19-1.jpg",
-      "cuisine": "American",
-      "isFavorite": true
-    },
-    {
-      "id": "4dd9",
-      "title": "fish-n-chips",
+      "id": "5f7f",
+      "title": "Fish-n-chips",
       "image": "https://curioustimes.in/wp-content/uploads/2019/12/Fish-and-chips-Eat-Street.jpg",
-      "ingredients": "fish fillet, potato chips, oil",
+      "ingredients": "fish fillet, french fries, olive oil",
       "instructions": "Add spices to fillet and chips, fry on low heat for 15 to 20 minutes",
       "cuisine": "American",
       "isFavorite": false
+    },
+    {
+      "id": "23b0",
+      "title": "Veg stir fry",
+      "image": "https://food-images.files.bbci.co.uk/food/recipes/sachas_stir-fry_17077_16x9.jpg",
+      "ingredients": "tofu, broccoli, bell peppers, carrots, sesame oil, soy sauce",
+      "instructions": "Sauté tofu and vegetables in sesame oil; add soy sauce; serve over rice",
+      "cuisine": "Asian",
+      "isFavorite": false
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "1",
+      "title": "chicken breast"
+    },
+    {
+      "id": "2",
+      "title": "bell peppers"
+    },
+    {
+      "id": "3",
+      "title": "soy sauce"
+    },
+    {
+      "id": "4",
+      "title": "rice"
+    },
+    {
+      "id": "5",
+      "title": "pizza dough"
+    },
+    {
+      "id": "6",
+      "title": "tomato sauce"
+    },
+    {
+      "id": "7",
+      "title": "fresh mozzarella"
+    },
+    {
+      "id": "8",
+      "title": "fresh basil"
+    },
+    {
+      "id": "9",
+      "title": "olive oil"
+    },
+    {
+      "id": "10",
+      "title": "ground beef"
+    },
+    {
+      "id": "11",
+      "title": "taco seasoning"
+    },
+    {
+      "id": "12",
+      "title": "tortillas"
+    },
+    {
+      "id": "13",
+      "title": "lettuce"
+    },
+    {
+      "id": "14",
+      "title": "tomato"
+    },
+    {
+      "id": "15",
+      "title": "cheese"
+    },
+    {
+      "id": "16",
+      "title": "sour cream"
+    },
+    {
+      "id": "17",
+      "title": "fettuccine pasta"
+    },
+    {
+      "id": "18",
+      "title": "heavy cream"
+    },
+    {
+      "id": "19",
+      "title": "parmesan cheese"
+    },
+    {
+      "id": "20",
+      "title": "butter"
+    },
+    {
+      "id": "21",
+      "title": "garlic"
+    },
+    {
+      "id": "22",
+      "title": "beef shoulder"
+    },
+    {
+      "id": "23",
+      "title": "BBQ sauce"
+    },
+    {
+      "id": "24",
+      "title": "hamburger buns"
+    },
+    {
+      "id": "25",
+      "title": "coleslaw"
+    },
+    {
+      "id": "26",
+      "title": "linguine pasta"
+    },
+    {
+      "id": "27",
+      "title": "lemon"
+    },
+    {
+      "id": "28",
+      "title": "white wine"
+    },
+    {
+      "id": "29",
+      "title": "parsley"
+    },
+    {
+      "id": "30",
+      "title": "chicken thighs"
+    },
+    {
+      "id": "31",
+      "title": "yogurt"
+    },
+    {
+      "id": "32",
+      "title": "onion"
+    },
+    {
+      "id": "33",
+      "title": "ginger"
+    },
+    {
+      "id": "34",
+      "title": "garam masala"
+    },
+    {
+      "id": "35",
+      "title": "garlic cloves"
+    },
+    {
+      "id": "36",
+      "title": "lemon juice"
+    },
+    {
+      "id": "37",
+      "title": "plain yogurt"
+    },
+    {
+      "id": "38",
+      "title": "paprika"
+    },
+    {
+      "id": "39",
+      "title": "cumin"
+    },
+    {
+      "id": "40",
+      "title": "turmeric"
+    },
+    {
+      "id": "41",
+      "title": "cayenne pepper"
+    },
+    {
+      "id": "42",
+      "title": "salt"
+    },
+    {
+      "id": "43",
+      "title": "black pepper"
+    },
+    {
+      "id": "44",
+      "title": "red onion (for skewers)"
+    },
+    {
+      "id": "45",
+      "title": "rice noodles"
+    },
+    {
+      "id": "46",
+      "title": "shrimp"
+    },
+    {
+      "id": "47",
+      "title": "tofu"
+    },
+    {
+      "id": "48",
+      "title": "bean sprouts"
+    },
+    {
+      "id": "49",
+      "title": "green onions"
+    },
+    {
+      "id": "50",
+      "title": "peanuts"
+    },
+    {
+      "id": "51",
+      "title": "tamarind sauce"
+    },
+    {
+      "id": "dcb6",
+      "title": "fish fillet"
+    },
+    {
+      "id": "0da1",
+      "title": "french fries"
+    },
+    {
+      "id": "01c8",
+      "title": "broccoli"
+    },
+    {
+      "id": "0a47",
+      "title": "carrots"
+    },
+    {
+      "id": "062a",
+      "title": "sesame oil"
+    }
+  ],
+  "ingredientToRecipes": [
+    {
+      "id": "1",
+      "ingredientId": "1",
+      "recipeId": "1"
+    },
+    {
+      "id": "2",
+      "ingredientId": "1",
+      "recipeId": "4"
+    },
+    {
+      "id": "3",
+      "ingredientId": "1",
+      "recipeId": "9"
+    },
+    {
+      "id": "4",
+      "ingredientId": "2",
+      "recipeId": "1"
+    },
+    {
+      "id": "5",
+      "ingredientId": "2",
+      "recipeId": "9"
+    },
+    {
+      "id": "6",
+      "ingredientId": "3",
+      "recipeId": "1"
+    },
+    {
+      "id": "7",
+      "ingredientId": "4",
+      "recipeId": "1"
+    },
+    {
+      "id": "8",
+      "ingredientId": "5",
+      "recipeId": "2"
+    },
+    {
+      "id": "9",
+      "ingredientId": "6",
+      "recipeId": "2"
+    },
+    {
+      "id": "10",
+      "ingredientId": "7",
+      "recipeId": "2"
+    },
+    {
+      "id": "11",
+      "ingredientId": "8",
+      "recipeId": "2"
+    },
+    {
+      "id": "12",
+      "ingredientId": "9",
+      "recipeId": "2"
+    },
+    {
+      "id": "13",
+      "ingredientId": "9",
+      "recipeId": "9"
+    },
+    {
+      "id": "14",
+      "ingredientId": "10",
+      "recipeId": "3"
+    },
+    {
+      "id": "15",
+      "ingredientId": "10",
+      "recipeId": "6"
+    },
+    {
+      "id": "16",
+      "ingredientId": "11",
+      "recipeId": "3"
+    },
+    {
+      "id": "17",
+      "ingredientId": "12",
+      "recipeId": "3"
+    },
+    {
+      "id": "18",
+      "ingredientId": "13",
+      "recipeId": "3"
+    },
+    {
+      "id": "19",
+      "ingredientId": "13",
+      "recipeId": "6"
+    },
+    {
+      "id": "20",
+      "ingredientId": "14",
+      "recipeId": "3"
+    },
+    {
+      "id": "21",
+      "ingredientId": "14",
+      "recipeId": "6"
+    },
+    {
+      "id": "22",
+      "ingredientId": "15",
+      "recipeId": "3"
+    },
+    {
+      "id": "23",
+      "ingredientId": "16",
+      "recipeId": "3"
+    },
+    {
+      "id": "24",
+      "ingredientId": "16",
+      "recipeId": "8"
+    },
+    {
+      "id": "25",
+      "ingredientId": "17",
+      "recipeId": "4"
+    },
+    {
+      "id": "26",
+      "ingredientId": "18",
+      "recipeId": "4"
+    },
+    {
+      "id": "27",
+      "ingredientId": "19",
+      "recipeId": "4"
+    },
+    {
+      "id": "28",
+      "ingredientId": "20",
+      "recipeId": "4"
+    },
+    {
+      "id": "29",
+      "ingredientId": "21",
+      "recipeId": "4"
+    },
+    {
+      "id": "30",
+      "ingredientId": "22",
+      "recipeId": "5"
+    },
+    {
+      "id": "31",
+      "ingredientId": "23",
+      "recipeId": "5"
+    },
+    {
+      "id": "32",
+      "ingredientId": "24",
+      "recipeId": "5"
+    },
+    {
+      "id": "33",
+      "ingredientId": "25",
+      "recipeId": "5"
+    },
+    {
+      "id": "34",
+      "ingredientId": "24",
+      "recipeId": "6"
+    },
+    {
+      "id": "35",
+      "ingredientId": "13",
+      "recipeId": "6"
+    },
+    {
+      "id": "36",
+      "ingredientId": "14",
+      "recipeId": "6"
+    },
+    {
+      "id": "37",
+      "ingredientId": "16",
+      "recipeId": "6"
+    },
+    {
+      "id": "38",
+      "ingredientId": "26",
+      "recipeId": "7"
+    },
+    {
+      "id": "39",
+      "ingredientId": "27",
+      "recipeId": "7"
+    },
+    {
+      "id": "40",
+      "ingredientId": "21",
+      "recipeId": "7"
+    },
+    {
+      "id": "41",
+      "ingredientId": "28",
+      "recipeId": "7"
+    },
+    {
+      "id": "42",
+      "ingredientId": "29",
+      "recipeId": "7"
+    },
+    {
+      "id": "43",
+      "ingredientId": "30",
+      "recipeId": "8"
+    },
+    {
+      "id": "44",
+      "ingredientId": "31",
+      "recipeId": "8"
+    },
+    {
+      "id": "45",
+      "ingredientId": "32",
+      "recipeId": "8"
+    },
+    {
+      "id": "46",
+      "ingredientId": "39",
+      "recipeId": "9"
+    },
+    {
+      "id": "47",
+      "ingredientId": "40",
+      "recipeId": "9"
+    },
+    {
+      "id": "48",
+      "ingredientId": "41",
+      "recipeId": "9"
+    },
+    {
+      "id": "49",
+      "ingredientId": "42",
+      "recipeId": "9"
+    },
+    {
+      "id": "50",
+      "ingredientId": "43",
+      "recipeId": "9"
+    },
+    {
+      "id": "51",
+      "ingredientId": "44",
+      "recipeId": "9"
+    },
+    {
+      "id": "52",
+      "ingredientId": "45",
+      "recipeId": "9"
+    },
+    {
+      "id": "53",
+      "ingredientId": "46",
+      "recipeId": "9"
+    },
+    {
+      "id": "54",
+      "ingredientId": "47",
+      "recipeId": "10"
+    },
+    {
+      "id": "55",
+      "ingredientId": "48",
+      "recipeId": "10"
+    },
+    {
+      "id": "56",
+      "ingredientId": "49",
+      "recipeId": "10"
+    },
+    {
+      "id": "57",
+      "ingredientId": "50",
+      "recipeId": "10"
+    },
+    {
+      "id": "58",
+      "ingredientId": "51",
+      "recipeId": "10"
+    },
+    {
+      "id": "59",
+      "ingredientId": "52",
+      "recipeId": "10"
+    },
+    {
+      "id": "3190",
+      "ingredientId": "9"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "maz",
+      "password": "password"
+    },
+    {
+      "id": "bf83",
+      "username": "maz2",
+      "password": "1234"
+    },
+    {
+      "id": "ae3c",
+      "username": "jon",
+      "password": "tarara"
+    },
+    {
+      "id": "7644",
+      "username": "robin",
+      "password": "kjkj"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "87b0",
+      "userId": "ae3c",
+      "recipeId": "3"
+    },
+    {
+      "id": "f7c6",
+      "userId": "ae3c",
+      "recipeId": "4"
+    },
+    {
+      "id": "b711",
+      "userId": "1",
+      "recipeId": "1"
+    },
+    {
+      "id": "6b1f",
+      "userId": "1",
+      "recipeId": "5"
+    },
+    {
+      "id": "f1f7",
+      "userId": "1",
+      "recipeId": "6"
+    },
+    {
+      "id": "3a4b",
+      "userId": "ae3c",
+      "recipeId": "2"
+    },
+    {
+      "id": "8863",
+      "userId": "7644",
+      "recipeId": "7"
     }
   ]
 }

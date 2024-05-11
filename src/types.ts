@@ -1,12 +1,5 @@
-// export interface Recipe {
-//   id: number;
-//   title: string;
-//   image: string;
-//   imageType: string;
-// }
-
 export interface Recipe {
-  id: number;
+  id: string;
   title: string;
   image: string;
   ingredients: string;
@@ -15,8 +8,25 @@ export interface Recipe {
   isFavorite: boolean;
 }
 
-export interface RecipeSummary {
-  id: number;
+export interface Ingredient {
+  id: string;
   title: string;
-  summary: string;
+}
+
+export interface IngredientToRecipe {
+  id: string;
+  ingredientId: string;
+  recipeId: string;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  password: string;
+}
+
+export interface Favorite {
+  id: string;
+  userId: string | undefined;
+  recipeId: string;
 }
