@@ -23,6 +23,16 @@ export const getIngredientsList = (): Promise<Ingredient[]> => {
     })
 }
 
+export const getIngredientToRecipes = (): Promise<IngredientToRecipe[]> => {
+  return fetch(`${baseUrl}/ingredientToRecipes`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Could not get ingredientToRecipes! Status: ${response.status}`)
+      }
+      return response.json();
+    })
+}
+
 export const getAllUsers = (): Promise<User[]> => {
 
   return fetch(`${baseUrl}/users`)
@@ -34,7 +44,7 @@ export const getAllUsers = (): Promise<User[]> => {
     })
 }
 
-export const postRecipe = (recipe: Omit<Recipe, 'id'>) => {
+export const postRecipe = (recipe: Omit<Recipe, 'id'>): Promise<Recipe> => {
 
   return fetch(`${baseUrl}/recipes`, {    
     method: 'POST',
@@ -47,7 +57,7 @@ export const postRecipe = (recipe: Omit<Recipe, 'id'>) => {
     if (!response.ok) {
       throw new Error(`Could not post recipe! Status: ${response.status}`)
     }
-    return response.json();
+    return response.json() as Promise<Recipe>;
   })
 }
 

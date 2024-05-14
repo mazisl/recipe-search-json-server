@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import * as api from "./api";
 
-import type { Recipe, Ingredient, User, Favorite } from './types';
+import type { Recipe, Ingredient, IngredientToRecipe, User, Favorite } from './types';
 import { RegisterForm } from './components/RegisterForm';
 import { LoginForm } from './components/LoginForm';
 import RecipeCard from './components/RecipeCard';
@@ -19,6 +19,7 @@ const App = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [allRecipes, setAllRecipes] = useState<Recipe[]>([]);
   const [ingredientsList, setIngredientsList] = useState<Ingredient[]>([]);
+  const [ingredientToRecipesList, setIngredientToRecipesList] = useState<IngredientToRecipe[]>([]);
   const [allUsers, setAllUsers] = useState<User[]>([]);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | undefined>(undefined);
@@ -62,11 +63,20 @@ const App = () => {
       .finally(() => setIsLoading(false))
   }
 
+  const refetchIngredientToRecipesList = () => {
+    setIsLoading(true);
+    return api.getIngredientToRecipes()
+      .then((ingToRec) => setIngredientToRecipesList(ingToRec))
+      .catch(() => toast.error('Failed to refetch ingredientToRecipes list!'))
+      .finally(() => setIsLoading(false))
+  }
+
   useEffect(() => {
     refetchRecipes();
     refetchUsers();
     refetchFavs();
     refetchIngredientsList();
+    refetchIngredientToRecipesList();
   }, []);
 
   const createRecipe = (recipe: Omit<Recipe, 'id'>) => {
@@ -83,6 +93,14 @@ const App = () => {
     .then(() => refetchIngredientsList())
     .then(() => toast.success('Thanks for creating a new ingredient!'))
     .finally(() => setIsLoading(false))
+  }
+
+  const createIngredientToRecipe = (ingToRec: Omit<IngredientToRecipe, 'id'>) => {
+    setIsLoading(true);
+    return api.postIngredientToRecipe(ingToRec)
+      .then(() => refetchIngredientToRecipesList())
+      .then(() => toast.success('Thanks for creating a new ingredientToRecipe!'))
+      .finally(() => setIsLoading(false))
   }
 
   // const createUser = (user: Omit<User, "id">): Promise<void> => {
@@ -251,7 +269,7 @@ const App = () => {
 
         {/* if search tab is selected */}
         {selectedTab === 'createRecipe' ? (          
-          <CreateRecipeForm ingredientsList={ingredientsList} createRecipe={createRecipe} createIngredient={createIngredient} isLoading={isLoading} />
+          <CreateRecipeForm allRecipes={allRecipes} ingredientsList={ingredientsList} createRecipe={createRecipe} createIngredient={createIngredient} createIngredientToRecipe={createIngredientToRecipe} isLoading={isLoading} />
           ) : (
           <>
             <input className='search-box' type='search' placeholder='search recipes' 

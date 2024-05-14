@@ -4,8 +4,7 @@
       "id": "1",
       "title": "Chicken Stir-Fry",
       "image": "https://www.kitchensanctuary.com/wp-content/uploads/2016/03/Quick-Chicken-Stir-Fry-wide-FS-60.jpg",
-      "ingredients": "chicken breast, bell peppers, soy sauce, rice"
-      ,
+      "ingredients": "chicken breast, bell peppers, soy sauce, rice",
       "instructions": "Stir-fry chicken and vegetables; add soy sauce; serve with rice.",
       "cuisine": "Asian",
       "isFavorite": "false"
@@ -13,8 +12,7 @@
     {
       "id": "2",
       "title": "Classic Margherita Pizza",
-      "ingredients": "pizza dough, tomato sauce, fresh mozzarella, fresh basil, olive oil"
-      ,
+      "ingredients": "pizza dough, tomato sauce, fresh mozzarella, fresh basil, olive oil",
       "instructions": "Roll out pizza dough; spread tomato sauce; top with sliced mozzarella and basil; bake until crust is golden.",
       "image": "https://imagevars.gulfnews.com/2023/09/04/Magherita-pizza-_18a6007a47a_medium.jpg",
       "cuisine": "Italian",
@@ -23,8 +21,7 @@
     {
       "id": "3",
       "title": "Beef Tacos",
-      "ingredients": "ground beef, taco seasoning, tortillas, lettuce, tomato, cheese, sour cream"
-      ,
+      "ingredients": "ground beef, taco seasoning, tortillas, lettuce, tomato, cheese, sour cream",
       "instructions": "Brown ground beef with taco seasoning; assemble tacos with desired toppings.",
       "image": "https://img.taste.com.au/Z2m_6zIt/taste/2016/11/beef-tacos-98153-1.jpeg",
       "cuisine": "Mexican",
@@ -33,8 +30,7 @@
     {
       "id": "4",
       "title": "Chicken Alfredo Pasta",
-      "ingredients": "chicken breast, fettuccine pasta, heavy cream, parmesan cheese, butter, garlic"
-      ,
+      "ingredients": "chicken breast, fettuccine pasta, heavy cream, parmesan cheese, butter, garlic",
       "instructions": "Cook pasta; sauté chicken and garlic; add cream and parmesan; toss with cooked pasta.",
       "image": "https://dinnerthendessert.com/wp-content/uploads/2021/05/Chicken-Alfredo-Pasta-1x1-1.jpg",
       "cuisine": "Italian",
@@ -43,8 +39,7 @@
     {
       "id": "5",
       "title": "BBQ Pulled Beef Sandwich",
-      "ingredients": "beef shoulder, BBQ sauce, hamburger buns, coleslaw"
-      ,
+      "ingredients": "beef shoulder, BBQ sauce, hamburger buns, coleslaw",
       "instructions": "Slow-cook beef with BBQ sauce until tender; shred and serve on buns with coleslaw.",
       "image": "https://www.tasteguru.com/wp-content/uploads/Slow-Cooker-Pulled-BBQ-Beef-Sandwiches-3.jpg",
       "cuisine": "American",
@@ -53,8 +48,7 @@
     {
       "id": "6",
       "title": "Beef Burger",
-      "ingredients": "ground beef, hamburger buns, lettuce, tomato, onion, cheese, ketchup, mustard"
-      ,
+      "ingredients": "ground beef, hamburger buns, lettuce, tomato, onion, cheese, ketchup, mustard",
       "instructions": "Form beef into patties; grill to desired doneness; assemble burgers with toppings and condiments.",
       "image": "https://food-images.files.bbci.co.uk/food/recipes/spicybeefburger_71357_16x9.jpg",
       "cuisine": "American",
@@ -63,8 +57,7 @@
     {
       "id": "7",
       "title": "Lemon Garlic Shrimp Scampi",
-      "ingredients": "shrimp, linguine pasta, garlic, lemon, butter, white wine, parsley"
-      ,
+      "ingredients": "shrimp, linguine pasta, garlic, lemon, butter, white wine, parsley",
       "instructions": "Sauté shrimp and garlic in butter; add lemon juice and wine; toss with cooked pasta and parsley.",
       "image": "https://www.daringgourmet.com/wp-content/uploads/2014/09/Campbells-Scampi-4-edited.jpg",
       "cuisine": "Italian",
@@ -73,8 +66,7 @@
     {
       "id": "8",
       "title": "Chicken Tikka Masala",
-      "ingredients": "chicken thighs, yogurt, tomato sauce, onion, garlic, ginger, garam masala"
-      ,
+      "ingredients": "chicken thighs, yogurt, tomato sauce, onion, garlic, ginger, garam masala",
       "instructions": "Marinate chicken in yogurt and spices; grill or sauté; simmer in tomato sauce with onions and spices.",
       "image": "https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2023/09/Air_Fryer_Chicken_Tikka_Masala-500x500.jpg",
       "cuisine": "Indian",
@@ -99,21 +91,12 @@
       "isFavorite": "false"
     },
     {
-      "id": "5f7f",
+      "id": "f7c4",
       "title": "Fish-n-chips",
       "image": "https://curioustimes.in/wp-content/uploads/2019/12/Fish-and-chips-Eat-Street.jpg",
       "ingredients": "fish fillet, french fries, olive oil",
       "instructions": "Add spices to fillet and chips, fry on low heat for 15 to 20 minutes",
       "cuisine": "American",
-      "isFavorite": false
-    },
-    {
-      "id": "23b0",
-      "title": "Veg stir fry",
-      "image": "https://food-images.files.bbci.co.uk/food/recipes/sachas_stir-fry_17077_16x9.jpg",
-      "ingredients": "tofu, broccoli, bell peppers, carrots, sesame oil, soy sauce",
-      "instructions": "Sauté tofu and vegetables in sesame oil; add soy sauce; serve over rice",
-      "cuisine": "Asian",
       "isFavorite": false
     }
   ],
@@ -323,24 +306,12 @@
       "title": "tamarind sauce"
     },
     {
-      "id": "dcb6",
-      "title": "fish fillet"
-    },
-    {
-      "id": "0da1",
+      "id": "2e0a",
       "title": "french fries"
     },
     {
-      "id": "01c8",
-      "title": "broccoli"
-    },
-    {
-      "id": "0a47",
-      "title": "carrots"
-    },
-    {
-      "id": "062a",
-      "title": "sesame oil"
+      "id": "f510",
+      "title": "fish fillet"
     }
   ],
   "ingredientToRecipes": [
@@ -640,7 +611,7 @@
       "recipeId": "10"
     },
     {
-      "id": "3190",
+      "id": "dd43",
       "ingredientId": "9"
     }
   ],
@@ -701,6 +672,11 @@
       "id": "8863",
       "userId": "7644",
       "recipeId": "7"
+    },
+    {
+      "id": "117b",
+      "userId": "ae3c",
+      "recipeId": "6"
     }
   ]
 }
