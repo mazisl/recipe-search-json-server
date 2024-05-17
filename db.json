@@ -89,15 +89,6 @@
       "image": "https://www.chilipeppermadness.com/wp-content/uploads/2022/03/Pad-Thai-SQ.jpg",
       "cuisine": "Thai",
       "isFavorite": "false"
-    },
-    {
-      "id": "f7c4",
-      "title": "Fish-n-chips",
-      "image": "https://curioustimes.in/wp-content/uploads/2019/12/Fish-and-chips-Eat-Street.jpg",
-      "ingredients": "fish fillet, french fries, olive oil",
-      "instructions": "Add spices to fillet and chips, fry on low heat for 15 to 20 minutes",
-      "cuisine": "American",
-      "isFavorite": false
     }
   ],
   "ingredients": [
@@ -304,14 +295,6 @@
     {
       "id": "51",
       "title": "tamarind sauce"
-    },
-    {
-      "id": "2e0a",
-      "title": "french fries"
-    },
-    {
-      "id": "f510",
-      "title": "fish fillet"
     }
   ],
   "ingredientToRecipes": [
@@ -609,10 +592,6 @@
       "id": "59",
       "ingredientId": "52",
       "recipeId": "10"
-    },
-    {
-      "id": "dd43",
-      "ingredientId": "9"
     }
   ],
   "users": [
@@ -672,11 +651,6 @@
       "id": "8863",
       "userId": "7644",
       "recipeId": "7"
-    },
-    {
-      "id": "117b",
-      "userId": "ae3c",
-      "recipeId": "6"
     }
   ]
 }

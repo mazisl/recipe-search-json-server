@@ -3,7 +3,6 @@ import { Recipe, User, Ingredient, IngredientToRecipe, Favorite } from "./types"
 const baseUrl = 'http://localhost:3000';
 
 export const getAllRecipes = (): Promise<Recipe[]> => {
-
   return fetch(`${baseUrl}/recipes`)
     .then((response) => {
       if (!response.ok) {
@@ -34,7 +33,6 @@ export const getIngredientToRecipes = (): Promise<IngredientToRecipe[]> => {
 }
 
 export const getAllUsers = (): Promise<User[]> => {
-
   return fetch(`${baseUrl}/users`)
     .then((response) => {
       if (!response.ok) {
@@ -45,7 +43,6 @@ export const getAllUsers = (): Promise<User[]> => {
 }
 
 export const postRecipe = (recipe: Omit<Recipe, 'id'>): Promise<Recipe> => {
-
   return fetch(`${baseUrl}/recipes`, {    
     method: 'POST',
     headers: {
@@ -94,7 +91,6 @@ export const postIngredientToRecipe = (ingToRec: Omit<IngredientToRecipe, 'id'>)
 }
 
 export const postUser = (user: Omit<User, 'id'>) => {
-
   return fetch(`${baseUrl}/users`, {
     method: 'POST',
     headers: {
@@ -121,7 +117,6 @@ export const getAllFavorites = (): Promise<Favorite[]> => {
 }
 
 export const postFavorite = (favorite: Omit<Favorite, 'id'>) => {
-
   return fetch(`${baseUrl}/favorites`, {
     method: 'POST',
     headers: {
@@ -142,12 +137,11 @@ export const deleteFavorite = (favorite: Favorite) => {
     method: 'DELETE',
   })
   .then((response) => {
-    if (!response.ok) throw new Error('Failed to delete recipe!')
+    if (!response.ok) throw new Error('Failed to delete fav recipe!')
   })
 }
 
 export const toggleFavorite = async (favRecipe: Omit<Favorite, 'id'>) => {
-
   const allFavorites = await getAllFavorites();
   const matchingFavorite = allFavorites.find((fav) => fav.userId === favRecipe.userId && fav.recipeId === favRecipe.recipeId);
 

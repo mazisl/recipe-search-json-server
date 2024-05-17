@@ -29,6 +29,7 @@ const App = () => {
   
   //we need favoritesRecipes, setFavoriteRecipes, toggleFavRecipe from "FavoritesProvider"
   
+
   const pageNumber = useRef(1);
 
   const refetchRecipes = () => {
