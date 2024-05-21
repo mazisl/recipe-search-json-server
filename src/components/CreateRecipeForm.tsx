@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Recipe, Ingredient, IngredientToRecipe } from "../types"
 import toast from "react-hot-toast";
-// import * as api from './../api';
 
 interface CreateRecipeFormProps {
   allRecipes: Recipe[];
@@ -20,13 +19,54 @@ export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, cre
   const [ingredientsInput, setIngredientsInput] = useState<string>('');
   const [instructionsInput, setInstructionsInput] = useState<string>('');
   const [imageInput, setImageInput] = useState<string>('');
-  const [cuisineInput, setCuisineInput] = useState<string>(cuisineArr[0]);  
+  const [cuisineInput, setCuisineInput] = useState<string>(cuisineArr[0]);
+  const [ingredientsCreated, setIngredientsCreated] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   console.log('effect fired')
-  //   console.log('All Recipes:', allRecipes)
-  //   console.log('Ingredients List:', ingredientsList)
-  // }, [allRecipes, ingredientsList]);
+  useEffect(() => {
+    const handleIngredientsToRecipeCreation = async () => {
+      if (ingredientsCreated) {
+        try {
+  
+          // Get the latest recipe
+          const latestRecipe = allRecipes[allRecipes.length - 1];
+  
+          // Create ingredientToRecipe entries for each ingredient
+          const ingredientsArray = splitIngredients(ingredientsInput);
+  
+          const ingredientToRecipePromises = ingredientsArray.map(async (ingItem) => {
+            const newIngredient = ingredientsList.find((ingredient) => ingredient.title === ingItem);
+  
+            if (newIngredient) {
+              const ingredientToRecipe: Omit<IngredientToRecipe, 'id'> = {
+                ingredientId: newIngredient.id,
+                recipeId: latestRecipe.id,
+              };
+              await createIngredientToRecipe(ingredientToRecipe).catch(() => toast.error('Could not create ingredientToRecipe!'));
+            }
+          });
+  
+          await Promise.all(ingredientToRecipePromises);
+  
+          // Clear form inputs
+          setNameInput('');
+          setIngredientsInput('');
+          setInstructionsInput('');
+          setImageInput('');
+          setCuisineInput(cuisineArr[0]);
+  
+        } catch (error) {
+          toast.error('Could not refetch ingredients or create ingredientToRecipe!');
+        } finally {
+          // Reset ingredientsCreated state
+          ingredientsArray = []
+          setIngredientsCreated(false);
+        }
+      }
+    };
+  
+    handleIngredientsToRecipeCreation();
+  }, [ingredientsList]);
+  
 
   const splitIngredients = (ingredientsInput: string): string[] => {
     const trimmedInput = ingredientsInput.trim();
@@ -36,8 +76,6 @@ export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, cre
   };
 
   let ingredientsArray: string[] = [];
-
-  console.log(ingredientsArray);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,53 +94,28 @@ export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, cre
       toast.success('Recipe created successfully')
 
       //split ingredients after recipe is created
-      ingredientsArray = splitIngredients(ingredientsInput);  
-      console.log(ingredientsArray);
+      ingredientsArray = splitIngredients(ingredientsInput);
 
       //take ingredients from ingredientsInput and create new ingredients in the ingredients endpoint for all the ingredients that don't already exist
       //ingredientsArray contain the ingredients from ingredientsInput
       //ingredientsList contain ingredients stored in ingredients data type in json.db
-      const ingredientPromises = ingredientsArray.map((ingItem) => {
+      const ingredientPromises = ingredientsArray.map(async (ingItem) => {
         const existingIngredient = ingredientsList.find((ingredient) => ingredient.title === ingItem);
   
         if (!existingIngredient) {
           const newIngredient: Omit<Ingredient, 'id'> = {
              title: ingItem 
             };
-          return createIngredient(newIngredient)
+          await createIngredient(newIngredient)
             .catch(() => toast.error('Could not create ingredient!'));
         }
-        return Promise.resolve();
       });
   
       // Wait for all ingredient creation promises to resolve
       await Promise.all(ingredientPromises);
-  
-  
-      // Create ingredientToRecipe entries for each ingredient entered inside ingredientsInput  
-      const updatedIngredientsList = [...ingredientsList];
 
-      const ingredientToRecipePromises = ingredientsArray.map((ingItem) => {
-        const newIngredient = updatedIngredientsList.find((ingredient) => ingredient.title === ingItem);
-  
-        if (newIngredient) {
-          const ingredientToRecipe = {
-            ingredientId: newIngredient.id,
-            recipeId: allRecipes[allRecipes.length - 1].id,
-          };
-          return createIngredientToRecipe(ingredientToRecipe).catch(() => toast.error('Could not create ingredientToRecipe!'));
-        }
-        return Promise.resolve();
-      });
-  
-      await Promise.all(ingredientToRecipePromises);
-      
-      //clear form inputs      
-      setNameInput('');
-      setIngredientsInput('');
-      setInstructionsInput('');
-      setImageInput('');
-      setCuisineInput(cuisineArr[0]);
+      // Set ingredients created flag
+      setIngredientsCreated(true);
 
     } catch (error) {
       toast.error('Could not create recipe!')
