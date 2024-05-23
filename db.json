@@ -7,7 +7,7 @@
       "ingredients": "chicken breast, bell peppers, soy sauce, rice",
       "instructions": "Stir-fry chicken and vegetables; add soy sauce; serve with rice.",
       "cuisine": "Asian",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "instructions": "Roll out pizza dough; spread tomato sauce; top with sliced mozzarella and basil; bake until crust is golden.",
       "image": "https://imagevars.gulfnews.com/2023/09/04/Magherita-pizza-_18a6007a47a_medium.jpg",
       "cuisine": "Italian",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "instructions": "Brown ground beef with taco seasoning; assemble tacos with desired toppings.",
       "image": "https://img.taste.com.au/Z2m_6zIt/taste/2016/11/beef-tacos-98153-1.jpeg",
       "cuisine": "Mexican",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "instructions": "Cook pasta; sauté chicken and garlic; add cream and parmesan; toss with cooked pasta.",
       "image": "https://dinnerthendessert.com/wp-content/uploads/2021/05/Chicken-Alfredo-Pasta-1x1-1.jpg",
       "cuisine": "Italian",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "5",
@@ -43,7 +43,7 @@
       "instructions": "Slow-cook beef with BBQ sauce until tender; shred and serve on buns with coleslaw.",
       "image": "https://www.tasteguru.com/wp-content/uploads/Slow-Cooker-Pulled-BBQ-Beef-Sandwiches-3.jpg",
       "cuisine": "American",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "6",
@@ -52,7 +52,7 @@
       "instructions": "Form beef into patties; grill to desired doneness; assemble burgers with toppings and condiments.",
       "image": "https://food-images.files.bbci.co.uk/food/recipes/spicybeefburger_71357_16x9.jpg",
       "cuisine": "American",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "7",
@@ -61,7 +61,7 @@
       "instructions": "Sauté shrimp and garlic in butter; add lemon juice and wine; toss with cooked pasta and parsley.",
       "image": "https://www.daringgourmet.com/wp-content/uploads/2014/09/Campbells-Scampi-4-edited.jpg",
       "cuisine": "Italian",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "8",
@@ -70,7 +70,7 @@
       "instructions": "Marinate chicken in yogurt and spices; grill or sauté; simmer in tomato sauce with onions and spices.",
       "image": "https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2023/09/Air_Fryer_Chicken_Tikka_Masala-500x500.jpg",
       "cuisine": "Indian",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "9",
@@ -79,7 +79,7 @@
       "instructions": "1. Cut chicken breast into bite-sized cubes.\n2. In a bowl, mix minced garlic, lemon juice, yogurt, olive oil, paprika, cumin, turmeric, cayenne pepper, salt, and black pepper to make the marinade.\n3. Add chicken cubes to the marinade and coat evenly. Cover and refrigerate for at least 2 hours (preferably overnight) to marinate.\n4. Preheat grill to medium-high heat.\n5. Thread marinated chicken cubes onto skewers, alternating with pieces of red onion and bell peppers if desired.\n6. Grill kebabs for about 10-12 minutes, turning occasionally, until chicken is cooked through and slightly charred.\n7. Serve hot with rice or pita bread and a side of garlic sauce or tahini sauce.",
       "image": "https://tastegreatfoodie.com/wp-content/uploads/2022/09/Shish-Tawook-Recipe-e1662340981256.jpeg",
       "cuisine": "Lebanese",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "10",
@@ -88,7 +88,7 @@
       "instructions": "Soak noodles; stir-fry shrimp, tofu, and vegetables; toss with noodles, sauce, and peanuts.",
       "image": "https://www.chilipeppermadness.com/wp-content/uploads/2022/03/Pad-Thai-SQ.jpg",
       "cuisine": "Thai",
-      "isFavorite": "false"
+      "isFavorite": false
     },
     {
       "id": "7384",
@@ -683,6 +683,11 @@
       "id": "8863",
       "userId": "7644",
       "recipeId": "7"
+    },
+    {
+      "id": "4efa",
+      "userId": "ae3c",
+      "recipeId": "8"
     }
   ]
 }

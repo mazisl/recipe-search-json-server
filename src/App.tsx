@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import * as api from "./api";
 
 import type { Recipe, Ingredient, IngredientToRecipe, User, Favorite } from './types';
 import { RegisterForm } from './components/RegisterForm';
 import { LoginForm } from './components/LoginForm';
-import RecipeCard from './components/RecipeCard';
-import RecipeModal from './components/RecipeModal';
+import Recipes from './components/Recipes';
 import { CreateRecipeForm } from './components/CreateRecipeForm';
 import toast from 'react-hot-toast';
 
@@ -22,15 +21,11 @@ const App = () => {
   const [ingredientToRecipesList, setIngredientToRecipesList] = useState<IngredientToRecipe[]>([]);
   const [allUsers, setAllUsers] = useState<User[]>([]);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | undefined>(undefined);
   const [selectedTab, setSelectedTab] = useState<ActiveTab>('all');
   const [favoriteRecipes, setFavoriteRecipes] = useState<Favorite[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   
   //we need favoritesRecipes, setFavoriteRecipes, toggleFavRecipe from "FavoritesProvider"
-  
-
-  const pageNumber = useRef(1);
 
   const refetchRecipes = () => {
     setIsLoading(true);
@@ -103,6 +98,8 @@ const App = () => {
       .then(() => toast.success('Thanks for creating a new ingredientToRecipe!'))
       .finally(() => setIsLoading(false))
   }
+
+  console.log(ingredientToRecipesList);
 
   // const createUser = (user: Omit<User, "id">): Promise<void> => {
   //   setIsLoading(true);
@@ -213,19 +210,6 @@ const App = () => {
     const searchInputString = e.target.value.toLowerCase();
     setSearchInput(searchInputString)
   }
-
-  //view more btn click handler
-  const handleViewMoreClick = () => {
-    const nextPage = pageNumber.current + 1;
-    api.getAllRecipes()
-      .then(nextRecipes => {
-        setAllRecipes([...allRecipes, ...nextRecipes]);
-        pageNumber.current = nextPage;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
   
 
   return (
@@ -277,48 +261,9 @@ const App = () => {
               onChange={handleSearchInputChange} 
             />
             
-            {searchInput ? (
-              <div className='recipe-grid'>
-                {filteredRecipes.map((recipe: Recipe) => {
-                  const isFavorite = !!favoriteRecipes.find((favorite) => favorite.userId === currentUser?.id && favorite.recipeId === recipe.id)
-                  return (
-                    <RecipeCard
-                      key={recipe.id}
-                      recipe={recipe}
-                      cardClickHandler={() => setSelectedRecipe(recipe)}
-                      isFavorite={isFavorite}
-                      currentUser={currentUser}
-                      toggleFavRecipe={toggleFavRecipe}
-                    />
-                )
-                })}
-              </div>
-              ) : (
-              <div className='recipe-grid'>
-                {displayRecipes.map((recipe: Recipe) => {
-                  const isFavorite = !!favoriteRecipes.find((favorite) => favorite.userId === currentUser?.id && favorite.recipeId === recipe.id)
-                  return (
-                    <RecipeCard
-                      key={recipe.id}
-                      recipe={recipe}
-                      cardClickHandler={() => setSelectedRecipe(recipe)}
-                      isFavorite={isFavorite}
-                      currentUser={currentUser}
-                      toggleFavRecipe={toggleFavRecipe}
-                    />
-                  );
-                })}
-              </div>
-            )}
-
-            <button className='view-more-btn' onClick={handleViewMoreClick}>
-              View More
-            </button>
+            <Recipes searchInput={searchInput} filteredRecipes={filteredRecipes} displayRecipes={displayRecipes} favoriteRecipes={favoriteRecipes} currentUser={currentUser} toggleFavRecipe={toggleFavRecipe} />
           </>
         )}
-
-        {/* if a recipe card is clicked the modal opens */}
-        {selectedRecipe && <RecipeModal recipe={selectedRecipe} onClose={() => setSelectedRecipe(undefined)} />}
       </div>
     </>
   );
