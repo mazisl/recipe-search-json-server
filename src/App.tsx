@@ -39,7 +39,7 @@ const App = () => {
             <h1 className={selectedTab === 'favorites' ? 'tab-active' : ''} 
               onClick={() => {
               if (!currentUser) {
-                toast.error('Login to view favorites!');
+                toast.error('Login to view your own favorites!');
                 return;              
               }
               setSelectedTab('favorites')

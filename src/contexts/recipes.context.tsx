@@ -128,10 +128,17 @@ export const RecipesProvider = ({children}: {children: ReactNode}) => {
     return favIdsArr.includes(recipe.id);
   });
 
-  const recipesList = {
+  // const recipesList = {
+  //   all: allRecipes,
+  //   favorites: favoriteRecipesList
+  // }
+
+  //alternative code to get rid of the annoying type error
+  const recipesList: { [key in ActiveTab]: Recipe[] } = {
     all: allRecipes,
-    favorites: favoriteRecipesList
-  }
+    favorites: favoriteRecipesList,
+    createRecipe: [] // Assuming this tab would have an empty list initially
+  };
 
   const displayRecipes = recipesList[selectedTab];
 
