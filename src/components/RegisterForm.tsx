@@ -1,27 +1,21 @@
 import { useState } from "react";
 import ModalOverlay from "./ModalOverlay";
-import type { User } from "../types";
 import toast from "react-hot-toast";
 
-interface RegisterFormProps {
-  createUser: (user: Omit<User, "id">) => Promise<void>;
-  isLoading: boolean;
-  onClose: () => void;
-}
+import { useUsers } from "../contexts/users.context";
 
-export const RegisterForm = ({
-  createUser,
-  isLoading,
-  onClose,
-}: RegisterFormProps) => {
+export const RegisterForm = () => {
+
+  const {createUser, isLoading, setSelectedBtn} = useUsers();
+
   const [usernameInput, setUsernameInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
 
   return (
     <>
-      <ModalOverlay onClose={onClose} />
+      <ModalOverlay onClose={() => setSelectedBtn(null)} />
       <div className="modal" id="register-form">
-        <span className="close-btn" onClick={onClose}>
+        <span className="close-btn" onClick={() => setSelectedBtn(null)}>
           &times;
         </span>
         <h2>Register</h2>

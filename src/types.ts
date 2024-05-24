@@ -5,7 +5,6 @@ export interface Recipe {
   ingredients: string;
   instructions: string;
   cuisine: string;
-  isFavorite: boolean;
 }
 
 export interface Ingredient {

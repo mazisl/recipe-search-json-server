@@ -1,22 +1,20 @@
 import { useState } from "react";
 import ModalOverlay from "./ModalOverlay";
 
-interface LoginFormProps {
-  login: (username: string, password: string) => void;
-  isLoading: boolean;
-  onClose: () => void;
-}
+import { useUsers } from "../contexts/users.context";
 
-export const LoginForm = ({login, isLoading, onClose}: LoginFormProps) => {
+export const LoginForm = () => {
+
+  const {login, isLoading, setSelectedBtn} = useUsers();
   
   const [usernameInput, setUsernameInput] = useState<string>("");
   const [passwordInput, setPasswordInput] = useState<string>("");
 
   return (
     <>
-      <ModalOverlay onClose={onClose} />
+      <ModalOverlay onClose={() => setSelectedBtn(null)} />
       <div className="modal" id="login-form">
-        <span className="close-btn" onClick={onClose}>
+        <span className="close-btn" onClick={() => setSelectedBtn(null)}>
           &times;
         </span>
         <h2>Login</h2>

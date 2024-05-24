@@ -1,18 +1,15 @@
 import { useState } from 'react'
-import type { Recipe, User, Favorite } from '../types'
+import type { Recipe } from '../types'
 import RecipeCard from './RecipeCard'
 import RecipeModal from './RecipeModal'
 
-interface RecipesProps {
-  searchInput: string;
-  filteredRecipes: Recipe[];
-  displayRecipes: Recipe[];
-  favoriteRecipes: Favorite[];
-  currentUser: User | null;
-  toggleFavRecipe: (favRecipe: Omit<Favorite, 'id'>) => Promise<string | void>;
-}
+import { useRecipes } from '../contexts/recipes.context'
+import { useUsers } from '../contexts/users.context'
 
-const Recipes = ({searchInput, filteredRecipes, displayRecipes, favoriteRecipes, currentUser, toggleFavRecipe}: RecipesProps ) => {
+export const Recipes = () => {
+
+  const {searchInput, filteredRecipes, displayRecipes, favoriteRecipes } = useRecipes();
+  const {currentUser} = useUsers();
 
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | undefined>(undefined);
 
@@ -28,8 +25,6 @@ const Recipes = ({searchInput, filteredRecipes, displayRecipes, favoriteRecipes,
                 recipe={recipe}
                 cardClickHandler={() => setSelectedRecipe(recipe)}
                 isFavorite={isFavorite}
-                currentUser={currentUser}
-                toggleFavRecipe={toggleFavRecipe}
               />
           )
           })}
@@ -44,8 +39,6 @@ const Recipes = ({searchInput, filteredRecipes, displayRecipes, favoriteRecipes,
                 recipe={recipe}
                 cardClickHandler={() => setSelectedRecipe(recipe)}
                 isFavorite={isFavorite}
-                currentUser={currentUser}
-                toggleFavRecipe={toggleFavRecipe}
               />
             );
           })}
@@ -58,5 +51,3 @@ const Recipes = ({searchInput, filteredRecipes, displayRecipes, favoriteRecipes,
     
   )
 }
-
-export default Recipes;

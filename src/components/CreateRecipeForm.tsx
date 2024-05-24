@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
-import type { Recipe, Ingredient, IngredientToRecipe } from "../types"
+import type { Ingredient, IngredientToRecipe } from "../types"
 import toast from "react-hot-toast";
 
-interface CreateRecipeFormProps {
-  allRecipes: Recipe[];
-  ingredientsList: Ingredient[];
-  createRecipe: (recipe: Omit<Recipe, 'id'>) => Promise<unknown>;
-  createIngredient: (ingredient: Omit<Ingredient, 'id'>) => Promise<unknown>;
-  createIngredientToRecipe: (ingToRec: Omit<IngredientToRecipe, 'id'>) => Promise<unknown>
-  isLoading: boolean;
-}
+import { useRecipes } from "../contexts/recipes.context";
+import { useUsers } from "../contexts/users.context";
 
 const cuisineArr = ['Italian', 'Asian', 'Mexican', 'American', 'Thai', 'Indian', 'Japanese', 'Russian', 'Spanish', 'Lebanese', 'Arabic', 'Mediterranian', 'Continental', 'Other']
 
-export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, createIngredient, createIngredientToRecipe, isLoading}: CreateRecipeFormProps) => {
+export const CreateRecipeForm = () => {
+
+  const {isLoading} = useUsers();
+  const {allRecipes, ingredientsList, createRecipe, createIngredient, createIngredientToRecipe} = useRecipes();
 
   const [nameInput, setNameInput] = useState<string>('');
   const [ingredientsInput, setIngredientsInput] = useState<string>('');
@@ -57,7 +54,6 @@ export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, cre
         } catch (error) {
           toast.error('Could not refetch ingredients or create ingredientToRecipe!');
         } finally {
-          // Reset ingredientsCreated state
           ingredientsArray = []
           setIngredientsCreated(false);
         }
@@ -87,8 +83,7 @@ export const CreateRecipeForm = ({allRecipes, ingredientsList, createRecipe, cre
         image: imageInput,
         ingredients: ingredientsInput,
         instructions: instructionsInput,
-        cuisine: cuisineInput,
-        isFavorite: false
+        cuisine: cuisineInput
       })
 
       toast.success('Recipe created successfully')
