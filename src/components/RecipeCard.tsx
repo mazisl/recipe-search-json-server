@@ -1,9 +1,9 @@
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import type { Recipe, Favorite } from "../types";
-import toast from "react-hot-toast";
 
 import { useUsers } from "../contexts/users.context";
 import { useRecipes } from "../contexts/recipes.context";
+import { Tooltip } from "./ui/tooltip";
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -14,7 +14,7 @@ interface RecipeCardProps {
 const RecipeCard = ({recipe, cardClickHandler, isFavorite }: RecipeCardProps) => {
 
   const {currentUser} = useUsers();
-  const {toggleFavRecipe} = useRecipes();
+  const {toggleFavRecipe, showTooltip, setShowTooltip} = useRecipes();
 
   const favRecipe: Omit<Favorite, 'id'> = {
     userId: currentUser?.id,
@@ -25,16 +25,19 @@ const RecipeCard = ({recipe, cardClickHandler, isFavorite }: RecipeCardProps) =>
     <div className="recipe-card" onClick={cardClickHandler}>
       <img src={recipe.image}/>
       <div className="recipe-card-title">
-        <span onClick={(e) => {
-          e.stopPropagation();
-          if (!currentUser) {
-            toast.error('Login to create favorites!');
-            return;              
-          }
-          toggleFavRecipe(favRecipe)
-        }}>
-          {isFavorite ? <AiFillHeart size={25} color="red" /> : <AiOutlineHeart size={25} /> }
-        </span>
+        <Tooltip tooltip={showTooltip ? "Login to favorite recipes you love!" : ""}>
+          <span onClick={(e) => {
+            e.stopPropagation();
+            if (!currentUser) {
+              setShowTooltip(true);
+              setTimeout(() => setShowTooltip(false), 3000);
+              return;              
+            }
+            toggleFavRecipe(favRecipe)
+          }}>
+            {isFavorite ? <AiFillHeart size={25} color="red" /> : <AiOutlineHeart size={25} /> }
+          </span>
+        </Tooltip>
         <h3>{recipe.title}</h3>
       </div>
     </div>

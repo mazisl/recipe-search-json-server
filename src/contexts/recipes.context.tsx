@@ -23,6 +23,8 @@ type TRecipesProvider = {
   toggleFavRecipe: (favRecipe: Omit<Favorite, 'id'>) => Promise<string | void>;
   handleCreateRecipeTabClick: () => void;
   handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  showTooltip: boolean;
+  setShowTooltip: (value: boolean) => void;
 }
 
 const RecipesContext = createContext<TRecipesProvider>({} as TRecipesProvider);
@@ -37,8 +39,7 @@ export const RecipesProvider = ({children}: {children: ReactNode}) => {
   const [ingredientToRecipesList, setIngredientToRecipesList] = useState<IngredientToRecipe[]>([]);
   const [selectedTab, setSelectedTab] = useState<ActiveTab>('all');
   const [favoriteRecipes, setFavoriteRecipes] = useState<Favorite[]>([]);
-  
-  //we need favoritesRecipes, setFavoriteRecipes, toggleFavRecipe from "FavoritesProvider"
+  const [showTooltip, setShowTooltip] = useState<boolean>(false);
 
   const refetchRecipes = () => {
     setIsLoading(true);
@@ -112,7 +113,8 @@ export const RecipesProvider = ({children}: {children: ReactNode}) => {
 
   const handleCreateRecipeTabClick = () => {
     if (!currentUser) {
-      toast.error('Login to create recipe!');
+      setShowTooltip(true);
+      setTimeout(() => setShowTooltip(false), 3000);
       return;              
     }
     setSelectedTab(prevTab => prevTab === 'createRecipe' ? 'all' : 'createRecipe');
@@ -166,7 +168,9 @@ export const RecipesProvider = ({children}: {children: ReactNode}) => {
     filteredRecipes,
     toggleFavRecipe,
     handleCreateRecipeTabClick,
-    handleSearchInputChange
+    handleSearchInputChange,
+    showTooltip,
+    setShowTooltip
   }
   
 

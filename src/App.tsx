@@ -4,14 +4,14 @@ import { RegisterForm } from './components/RegisterForm';
 import { LoginForm } from './components/LoginForm';
 import { Recipes } from './components/Recipes';
 import { CreateRecipeForm } from './components/CreateRecipeForm';
-import toast from 'react-hot-toast';
+import { Tooltip } from './components/ui/tooltip';
 
 import { useRecipes } from './contexts/recipes.context';
 import { useUsers } from './contexts/users.context';
 
 const App = () => {
 
-  const {selectedTab, setSelectedTab, handleCreateRecipeTabClick, handleSearchInputChange} = useRecipes();
+  const {selectedTab, setSelectedTab, handleCreateRecipeTabClick, handleSearchInputChange, showTooltip, setShowTooltip} = useRecipes();
   
   const {currentUser, logout, selectedBtn, setSelectedBtn } = useUsers();
 
@@ -36,19 +36,27 @@ const App = () => {
         <div className='tabs'>
           <div className='left'>
             <h1 className={selectedTab === 'all' ? 'tab-active' : ''} onClick={() => setSelectedTab('all')}>All Recipes</h1>
-            <h1 className={selectedTab === 'favorites' ? 'tab-active' : ''} 
-              onClick={() => {
-              if (!currentUser) {
-                toast.error('Login to view your own favorites!');
-                return;              
-              }
-              setSelectedTab('favorites')
-            }}>Favorites</h1>
-          </div>          
+            <Tooltip tooltip={showTooltip ? "Login to view your own favorites!" : ""}>
+              <h1 className={selectedTab === 'favorites' ? 'tab-active' : ''}
+                onClick={() => {
+                  if (!currentUser) {
+                    setShowTooltip(true);
+                    setTimeout(() => setShowTooltip(false), 3000);
+                    return;
+                  }
+                  setSelectedTab('favorites');
+                }}
+              >
+                Favorites
+              </h1>
+            </Tooltip>
+          </div>
           <div className='right'>
-            <button className={`create-recipe-btn ${selectedTab === 'createRecipe' ? 'tab-active' : ''}`} onClick={handleCreateRecipeTabClick}>
-              {selectedTab === 'createRecipe' ? 'Back to Recipes' : 'Create Recipe'}
-            </button>
+            <Tooltip tooltip={showTooltip ? "You must login to create recipes!" : ""}>
+              <button className={`create-recipe-btn ${selectedTab === 'createRecipe' ? 'tab-active' : ''}`} onClick={handleCreateRecipeTabClick}>
+                {selectedTab === 'createRecipe' ? 'Back to Recipes' : 'Create Recipe'}
+              </button>
+            </Tooltip>
           </div>
         </div>
 

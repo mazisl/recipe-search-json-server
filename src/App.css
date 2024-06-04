@@ -305,6 +305,7 @@ button {
   margin-top: 20px;
   font-size: 25px;
 }
+
 #create-recipe-form input[type="submit"] {
   margin-top: 20px;
   color: black;
@@ -333,4 +334,43 @@ button {
   color: black;
   font-size: 30px;
   margin-left: 10px;
+}
+
+/* Tooltip.css */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #3b82f6 transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }

@@ -8,10 +8,10 @@ import { UsersProvider } from './contexts/users.context.tsx'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Toaster />
-    <UsersProvider>
-      <RecipesProvider>
-        <App />
-      </RecipesProvider>
-    </UsersProvider>
+      <UsersProvider>
+        <RecipesProvider>
+          <App />
+        </RecipesProvider>
+      </UsersProvider>
   </React.StrictMode>
 )

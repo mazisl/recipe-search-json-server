@@ -37,8 +37,13 @@ export const UsersProvider = ({children}: {children: ReactNode}) => {
   useEffect(() => {
     refetchUsers();
   }, []);
-  
-  //we need favoritesRecipes, setFavoriteRecipes, toggleFavRecipe from "FavoritesProvider"
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const createUser = async (user: Omit<User, "id">): Promise<void> => {
     setIsLoading(true);
