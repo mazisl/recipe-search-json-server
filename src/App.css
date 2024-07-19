@@ -3,9 +3,12 @@
 }
 
 body {
-  padding-top: 2em;
-  padding-bottom: 5em;
+  padding: 2em;
   background-color: rgb(237, 250, 250);
+
+  @media (max-width: 475px) {
+    padding: 1em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -14,12 +17,6 @@ body {
     margin-right: 10em;
   }
 }
-
-/*form {
-  display: flex;
-  background-color: white;
-  align-items: center;
-}*/
 
 input {
   padding: 0.5em;
@@ -69,7 +66,6 @@ button {
 /*register form start*/
 #login-form,
 #register-form {
-  /*position: relative;*/
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -136,12 +132,23 @@ button {
 .tabs {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 860px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .tabs .left {
   display: flex;
   gap: 2em;
   cursor: pointer;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 }
 
 .tab-active {
@@ -159,7 +166,7 @@ button {
 
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2em;
 }
 
@@ -299,6 +306,11 @@ button {
 
 #create-recipe-form h4 {
   margin: 0px;
+
+  @media (max-width: 450px) {
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 #create-recipe-form label {
@@ -315,6 +327,10 @@ button {
   color: black;
   font-size: 20px;
   margin-left: 10px;
+
+  @media (max-width: 375px) {
+    max-width: 100%;
+  }
 }
 
 #create-recipe-form input:disabled {
@@ -328,6 +344,10 @@ button {
 
 #create-recipe-form textarea:disabled {
   opacity: 0.8;
+}
+
+#create-recipe-form textarea {
+  max-width: 100%;
 }
 
 #create-recipe-form select {
